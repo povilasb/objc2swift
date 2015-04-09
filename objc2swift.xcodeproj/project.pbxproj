@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AACBD5521AD4226A00078211 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACBD5511AD4226A00078211 /* main.swift */; };
+		AACBD55A1AD42BFA00078211 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = AACBD5591AD42BFA00078211 /* Person.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,9 @@
 /* Begin PBXFileReference section */
 		AACBD54E1AD4226A00078211 /* objc2swift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = objc2swift; sourceTree = BUILT_PRODUCTS_DIR; };
 		AACBD5511AD4226A00078211 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		AACBD5581AD42BF900078211 /* objc2swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "objc2swift-Bridging-Header.h"; sourceTree = "<group>"; };
+		AACBD5591AD42BFA00078211 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		AACBD55B1AD42C2400078211 /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +45,7 @@
 		AACBD5451AD4226A00078211 = {
 			isa = PBXGroup;
 			children = (
+				AACBD55B1AD42C2400078211 /* Person.h */,
 				AACBD5501AD4226A00078211 /* objc2swift */,
 				AACBD54F1AD4226A00078211 /* Products */,
 			);
@@ -58,6 +63,8 @@
 			isa = PBXGroup;
 			children = (
 				AACBD5511AD4226A00078211 /* main.swift */,
+				AACBD5591AD42BFA00078211 /* Person.m */,
+				AACBD5581AD42BF900078211 /* objc2swift-Bridging-Header.h */,
 			);
 			path = objc2swift;
 			sourceTree = "<group>";
@@ -118,6 +125,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AACBD55A1AD42BFA00078211 /* Person.m in Sources */,
 				AACBD5521AD4226A00078211 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -203,14 +211,21 @@
 		AACBD5561AD4226A00078211 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "objc2swift/objc2swift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		AACBD5571AD4226A00078211 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "objc2swift/objc2swift-Bridging-Header.h";
 			};
 			name = Release;
 		};
